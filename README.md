@@ -1,6 +1,6 @@
 # caesar_cipher
 
-This is an implementation of the caesar cipher script. Also included is a brute-force cipher breaker.
+This is an implementation of a caesar cipher in Ruby.. Also included is a brute-force cipher breaker.
 
 The cipher breaker uses a regular expressions and a list of impossible english bigrams to selectively filter out non-english words. This filter greatly reduces the number of possible results. 
 
