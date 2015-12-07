@@ -71,4 +71,4 @@ def breaker(word)
 	
 end
 
-breaker("olssv, dvysk! upjl av zll fvb.")
+breaker("olssv, dvysk!")
