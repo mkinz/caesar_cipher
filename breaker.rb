@@ -52,7 +52,7 @@ def breaker(word)
 		end
 	end
 
-	# add selective intelligent filtering 1: if words have vowels, they are possible english words
+	# add selective intelligent filtering 2: if words have vowels, they are possible english words
 	possible_arr_1.each do |item|
 		if item.match(/[aeiou]/)
 			possible_arr_2 << item
