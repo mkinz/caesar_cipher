@@ -20,4 +20,4 @@ def encrypt(words,idx)
 end
 
 
-encrypt("Hello Helena Liu!!", 7)
+encrypt("Hello, world! Nice to see you.", 7)
