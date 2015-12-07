@@ -4,13 +4,12 @@ def breaker(word)
 	# create an alphabet array
 	alphabet = ('a'..'z').to_a
 
+	# create arrays to store information during filtering
 	tmp_filter_arr = []
-
+	impossible_arr = []
 	possible_arr_1 = []
-
 	possible_arr_2 = []
 	
-	impossible_arr = []
 
 	# increment the idx 26 times to try all combinations of indices
 	26.times do |idx|
@@ -32,17 +31,8 @@ def breaker(word)
 		tmp_filter_arr << new_arr.join
 	end
 	
-	# add selective intelligent filtering 1: if words have vowels, they are possible english words
+	# add selective intelligent filtering 1: if words contains certain bigrams, they are impossible english words
 	tmp_filter_arr.each do |item|
-		if item.match(/[aeiou]/)
-			possible_arr_1 << item
-		else
-			impossible_arr << item
-		end
-	end
-
-	# add selective intelligent filtering 2: if words contains certain double letters, they are impossible english words
-	possible_arr_1.each do |item|
 		if item.match(/(bk)|(fq)|(jc)|(jt)|(mj)|(qh)|(qx)|(vj)|(wz)|(zh)
 				(bq)|(fv)|(jd)|(jv)|(mq)|(qj)|(qy)|(vk)|(xb)|(zj)
 				(bx)|(fx)|(jf)|(jw)|(mx)|(qk)|(qz)|(vm)|(xg)|(zn)
@@ -58,7 +48,16 @@ def breaker(word)
 				(fk)|(jb)|(js)|(mg)|(qg)|(qw)|(vh)|(wx)|(zg)/)
 			impossible_arr << item
 		else
+			possible_arr_1 << item
+		end
+	end
+
+	# add selective intelligent filtering 1: if words have vowels, they are possible english words
+	possible_arr_1.each do |item|
+		if item.match(/[aeiou]/)
 			possible_arr_2 << item
+		else
+			impossible_arr << item
 		end
 	end
 	
@@ -66,9 +65,6 @@ def breaker(word)
 	possible_arr_2.each do |item|
 		puts item
 	end
-	
-	
-	
 end
 
-breaker("olssv, dvysk!")
+breaker("gdx sgdqd, lx mzld hr lzss. sgzmjr enq bgdbjhmf nts lx bhogdq.")
