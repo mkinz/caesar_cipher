@@ -1,4 +1,11 @@
 def encrypt(words,idx)
+
+	puts "what word or phrase would you like to encrypt?"
+	words = gets.chomp
+
+	puts "What is your desired shift integer?"
+	idx = gets.chomp.to_i
+
 	# create an alphabet array
 	alphabet = ('a'..'z').to_a
 	# create an empty array to append new letters
@@ -16,6 +23,7 @@ def encrypt(words,idx)
 		end
 	end
 	# join and print out the characters in new_arr
+	puts "Here is your encrypted phase:"
 	puts new_arr.join
 end
 
