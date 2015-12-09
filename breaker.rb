@@ -60,11 +60,6 @@ def breaker(word)
 			possible_arr_2 << item
 		end
 	end
-
-
-
-
-	
 	
 	puts "Here are your possible english phrases:"
 	possible_arr_2.each do |item|
