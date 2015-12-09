@@ -31,8 +31,17 @@ def breaker(word)
 		tmp_filter_arr << new_arr.join
 	end
 	
-	# add selective intelligent filtering 1: if words contains certain bigrams, they are impossible english words
+	# add selective intelligent filtering 1: if words have vowels, they are possible english words
 	tmp_filter_arr.each do |item|
+		if item.match(/[aeiou]/)
+			possible_arr_1 << item
+		else
+			impossible_arr << item
+		end
+	end
+
+	# add selective intelligent filtering 2: if words contains certain bigrams, they are impossible english words
+	possible_arr_1.each do |item|
 		if item.match(/(bk)|(fq)|(jc)|(jt)|(mj)|(qh)|(qx)|(vj)|(wz)|(zh)
 				(bq)|(fv)|(jd)|(jv)|(mq)|(qj)|(qy)|(vk)|(xb)|(zj)
 				(bx)|(fx)|(jf)|(jw)|(mx)|(qk)|(qz)|(vm)|(xg)|(zn)
@@ -48,18 +57,14 @@ def breaker(word)
 				(fk)|(jb)|(js)|(mg)|(qg)|(qw)|(vh)|(wx)|(zg)/)
 			impossible_arr << item
 		else
-			possible_arr_1 << item
+			possible_arr_2 << item
 		end
 	end
 
-	# add selective intelligent filtering 2: if words have vowels, they are possible english words
-	possible_arr_1.each do |item|
-		if item.match(/[aeiou]/)
-			possible_arr_2 << item
-		else
-			impossible_arr << item
-		end
-	end
+
+
+
+	
 	
 	puts "Here are your possible english phrases:"
 	possible_arr_2.each do |item|
@@ -67,4 +72,4 @@ def breaker(word)
 	end
 end
 
-breaker("gdx sgdqd, lx mzld hr lzss. sgzmjr enq bgdbjhmf nts lx bhogdq.")
+breaker("guvf vf n grfg bs gur prnffne pvcure penpxvat cebtenz.")
