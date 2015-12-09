@@ -30,7 +30,7 @@ def breaker(word)
 		tmp_filter_arr << new_arr.join
 	end
 	
-	# add selective intelligent filtering 2: if words contains certain bigrams, they are impossible english words
+	# add selective intelligent filtering: if words contains certain bigrams, they are impossible english words
 	tmp_filter_arr.each do |item|
 		if item.match(/(bk)|(fq)|(jc)|(jt)|(mj)|(qh)|(qx)|(vj)|(wz)|(zh)
 				(bq)|(fv)|(jd)|(jv)|(mq)|(qj)|(qy)|(vk)|(xb)|(zj)
