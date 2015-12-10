@@ -15,6 +15,8 @@ def encrypt(words,idx)
 		# if the letter is in the alphabet, do this operation
 		if ltr.match(/[a-z]/)
 			# append the transformed letter using addition of alphabet array's index and the supplied index, mod 26
+			# note: we can use the .index method here because there is are no repeating items in the array. 
+			# if there were repeating items, the .index method will only find the first item!
 			new_arr << alphabet[(alphabet.index(ltr)+idx) % 26]
 		# if the letter is not in the alphabet, do this operation
 		else
