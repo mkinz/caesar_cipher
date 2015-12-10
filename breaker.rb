@@ -34,6 +34,7 @@ def breaker(word)
 	
 	# add selective intelligent filtering: if words contains certain bigrams, they are impossible english words
 	tmp_filter_arr.each do |item|
+		# if our item matches any of the impossible bigrams...
 		if item.match(/(bk)|(fq)|(jc)|(jt)|(mj)|(qh)|(qx)|(vj)|(wz)|(zh)
 				(bq)|(fv)|(jd)|(jv)|(mq)|(qj)|(qy)|(vk)|(xb)|(zj)
 				(bx)|(fx)|(jf)|(jw)|(mx)|(qk)|(qz)|(vm)|(xg)|(zn)
@@ -47,8 +48,11 @@ def breaker(word)
 				(cx)|(hz)|(jq)|(lq)|(qe)|(qt)|(vf)|(wq)|(zb)
 				(dx)|(iy)|(jr)|(lx)|(qf)|(qv)|(vg)|(wv)|(zc)
 				(fk)|(jb)|(js)|(mg)|(qg)|(qw)|(vh)|(wx)|(zg)/)
+			# move the item to impossible array
 			impossible_arr << item
+		#otherwise...
 		else
+			# move the item to possible array
 			possible_arr << item
 		end
 	end
@@ -59,4 +63,4 @@ def breaker(word)
 	end
 end
 
-breaker("guvf vf n grfg bs gur prnffne pvcure penpxvat.")
+breaker("mabl bl t mxlm hy t vtxltk vbiaxk ikhzktf pkbmmxg bg knur.")
